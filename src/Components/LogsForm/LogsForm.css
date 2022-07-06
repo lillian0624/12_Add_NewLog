@@ -1,0 +1,45 @@
+.logs-form{
+    margin-bottom: 30px;
+    background-color: rgb(231, 255, 247);
+    padding: 10px;
+}
+
+.form-item{
+    height: 36px;
+    line-height: 36px;
+    margin: 16px 0;
+    display: flex;
+    flex-flow:row;
+    /* background-color: antiquewhite; */
+}
+
+.form-item input{
+    border-color: rgb(118, 237, 168);
+    flex:auto;
+}
+
+.form-item label{
+    color: rgb(15, 79, 58);
+    text-align: center;
+    padding: 0 10px;
+}
+
+.form-btn{
+    text-align: center;
+    
+}
+
+.form-btn button{
+    width: 100px;
+    height: 50px;
+    font-size: 18px;
+    border: 0ch;
+    background-color: blueviolet;
+    color: #fff;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.form-btn button:hover{
+    background-color: rgb(24, 145, 104);
+}

@@ -1,0 +1,23 @@
+.item{
+    background-color: antiquewhite;
+    display: flex;
+    margin:16px 0;
+    padding: 12px;
+}
+
+.content{
+    flex: auto;
+    text-align: center;
+    /* background-color: black; */
+    font-weight: bold;
+}
+
+.desc{
+    font-size: 16px;
+    color: #333;
+}
+
+.time{
+    font-size: 24px;
+    color: blueviolet;
+}
