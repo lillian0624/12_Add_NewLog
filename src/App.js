@@ -36,7 +36,7 @@ const App = () => {
     newLog.id = Date.now() + "";
     // console.log("App.js -->", newLog);
     // LogsData.push(newLog);
-    setLogsData(...logsData, newLog);
+    setLogsData([newLog, ...logsData]);
   };
 
   return (
