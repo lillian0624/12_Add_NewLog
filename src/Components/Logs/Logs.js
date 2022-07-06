@@ -5,12 +5,18 @@ import "./Logs.css";
 import Card from "../UI/Card/Card";
 
 // 日志容器
-const Logs = () => {
+const Logs = (props) => {
+  // 将数据放入JSX中
+  const logItemDate = props.logsData.map((item) => (
+    <LogItem key={item.id} date={item.date} desc={item.desc} time={item.time} />
+  ));
+
   return (
     <Card className="logs">
-      <LogItem date={new Date(2021,10,30,10,0)} desc={"learning"} time={"1h"}/>
-      <LogItem date={new Date(2023,5,23,5,35)} desc={"working"} time={"3h"}/>
-   
+      {
+        logItemDate
+        // logsData.map(item => <LogItem {...item}/> )
+      }
     </Card>
   );
 };

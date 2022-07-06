@@ -3,10 +3,12 @@ import Card from "../UI/Card/Card";
 import "./LogsForm.css";
 import { useState } from "react";
 
-const LogsForm = () => {
+const LogsForm = (props) => {
   const [inputDate, setInputDate] = useState("");
   const [inputDesc, setInputDesc] = useState("");
   const [inputTime, setInputTime] = useState("");
+
+  console.log(props.onSaveLog);
 
   const dateChangeHandler = (e) => {
     // console.loge(e.target.value);
@@ -26,6 +28,8 @@ const LogsForm = () => {
   const formSubmitHandler = (e) => {
     e.preventDefault();
     //  console.log('form has been submited');
+
+    props.onSaveLog(newLog);
 
     const newLog = {
       date: new Date(inputDate),
