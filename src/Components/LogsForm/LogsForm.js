@@ -2,6 +2,7 @@ import React from "react";
 import Card from "../UI/Card/Card";
 import "./LogsForm.css";
 import { useState } from "react";
+import LogItem from "../Logs/LogItem/LogItem";
 
 const LogsForm = (props) => {
   const [inputDate, setInputDate] = useState("");
@@ -29,14 +30,13 @@ const LogsForm = (props) => {
     e.preventDefault();
     //  console.log('form has been submited');
 
-    props.onSaveLog(newLog);
-
     const newLog = {
       date: new Date(inputDate),
       desc: inputDesc,
       time: +inputTime,
     };
 
+    props.onSaveLog(newLog);
     setInputDate("");
     setInputDesc("");
     setInputTime("");
@@ -46,7 +46,7 @@ const LogsForm = (props) => {
 
   return (
     <Card className="logs-form">
-      <form onSubmit={formSubmitHandler}>
+      <form>
         <div className="form-item">
           <label htmlFor="date">date</label>
           <input
@@ -75,7 +75,7 @@ const LogsForm = (props) => {
           />
         </div>
         <div className="form-btn">
-          <button>add item</button>
+          <button onClick={formSubmitHandler}>add item</button>
         </div>
       </form>
     </Card>
