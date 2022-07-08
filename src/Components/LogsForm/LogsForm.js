@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../UI/Card/Card";
 import "./LogsForm.css";
 import { useState } from "react";
-import LogItem from "../Logs/LogItem/LogItem";
+// import LogItem from "../Logs/LogItem/LogItem";
 
 const LogsForm = (props) => {
   const [inputDate, setInputDate] = useState("");

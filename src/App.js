@@ -39,11 +39,23 @@ const App = () => {
     setLogsData([newLog, ...logsData]);
   };
 
+  const delLogByIndex = (index) => {
+    // setLogsData.splice(index, 1);
+    // setLogsData(prevS);
+
+    // setLogsData([newLog, ...logsData]);
+    setLogsData((prevState) => {
+      const newLogs = [...prevState];
+      newLogs.splice(index, 1);
+      return newLogs;
+    });
+  };
+
   return (
     <div className="app">
       <LogsForm onSaveLog={saveLogHandler} />
       <Card />
-      <Logs logsData={logsData} />
+      <Logs logsData={logsData} onDelLog={delLogByIndex} />
     </div>
   );
 };

@@ -7,8 +7,14 @@ import Card from "../UI/Card/Card";
 // 日志容器
 const Logs = (props) => {
   // 将数据放入JSX中
-  const logItemDate = props.logsData.map((item) => (
-    <LogItem key={item.id} date={item.date} desc={item.desc} time={item.time} />
+  const logItemDate = props.logsData.map((item, index) => (
+    <LogItem
+      onDelLog={() => props.onDelLog(index)}
+      key={item.id}
+      date={item.date}
+      desc={item.desc}
+      time={item.time}
+    />
   ));
 
   return (
