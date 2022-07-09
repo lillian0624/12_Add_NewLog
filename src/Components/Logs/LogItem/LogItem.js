@@ -14,7 +14,7 @@ const LogItem = (props) => {
       props.onDelLog();
     }
   };
-
+ 
   return (
     <Card className="item">
       <Calender date={props.date} />

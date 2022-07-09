@@ -7,7 +7,7 @@ import Card from "../UI/Card/Card";
 // 日志容器
 const Logs = (props) => {
   // 将数据放入JSX中
-  const logItemData = props.logsData.map((item, index) => (
+  let logItemData = props.logsData.map((item, index) => (
     <LogItem
       onDelLog={() => props.onDelLog(index)}
       key={item.id}
@@ -21,17 +21,19 @@ const Logs = (props) => {
     logItemData = <p className="no-logs">No item</p>;
   }
 
-  return;
-  <Card className="logs">
-    {
-      logItemData
-      // logItemData.length !== 0 ? (
-      //   logItemData
-      // ) : (
-      //   <p className="no-logs">No item</p>
-      // )
-      // // logsData.map(item => <LogItem {...item}/> )
-    }
-  </Card>;
+  return (
+    <Card className="logs">
+      {
+        logItemData
+        // logItemData.length !== 0 ? (
+        //   logItemData
+        // ) : (
+        //   <p className="no-logs">No item</p>
+        // )
+        // )
+        // // logsData.map(item => <LogItem {...item}/> )
+      }
+    </Card>
+  );
 };
 export default Logs;
