@@ -5,11 +5,11 @@ const ConfirmModal = (props) => {
   return (
     <Card className="confirmModal">
       <div className="confirmText">
-        <p>该操作不可恢复！确认吗？</p>
+        <p>This operation is not recoverable! Are you sure?</p>
       </div>
       <div className="confirmButton">
-        <button className="okButton">确认</button>
-        <button>取消</button>
+        <button className="okButton">Confirm</button>
+        <button>Cancel</button>
       </div>
     </Card>
   );
