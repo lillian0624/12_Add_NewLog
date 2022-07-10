@@ -21,19 +21,6 @@ const Logs = (props) => {
     logItemData = <p className="no-logs">No item</p>;
   }
 
-  return (
-    <Card className="logs">
-      {
-        logItemData
-        // logItemData.length !== 0 ? (
-        //   logItemData
-        // ) : (
-        //   <p className="no-logs">No item</p>
-        // )
-        // )
-        // // logsData.map(item => <LogItem {...item}/> )
-      }
-    </Card>
-  );
+  return <Card className="logs">{logItemData}</Card>;
 };
 export default Logs;

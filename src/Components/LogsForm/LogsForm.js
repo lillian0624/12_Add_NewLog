@@ -9,7 +9,7 @@ const LogsForm = (props) => {
   const [inputDesc, setInputDesc] = useState("");
   const [inputTime, setInputTime] = useState("");
 
-  console.log(props.onSaveLog);
+  // console.log(props.onSaveLog);
 
   const dateChangeHandler = (e) => {
     // console.loge(e.target.value);
