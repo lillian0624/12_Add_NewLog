@@ -5,11 +5,11 @@ const ConfirmModal = (props) => {
   return (
     <Card className="confirmModal">
       <div className="confirmText">
-        <p>This operation is not recoverable! Are you sure?</p>
+        <p>{props.confirmText}</p>
       </div>
       <div className="confirmButton">
-        <button className="okButton">Confirm</button>
-        <button>Cancel</button>
+        <button onClick={props.onOk}>Confirm</button>
+        <button onClick={props.onCancel}>Cancel</button>
       </div>
     </Card>
   );

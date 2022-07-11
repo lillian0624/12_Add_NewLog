@@ -1,24 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import Card from "../../UI/Card/Card";
+import ConfirmModal from "../../UI/ConfirmModal/ConfirmModal";
 import Calender from "./Calender/Calender";
 import "./LogItem.css";
 
 const LogItem = (props) => {
+  const [showConfirm, setShowConfirm] = useState(false);
+
   const deleteHandler = () => {
-    const isDel = window.confirm(
-      "This action cannot be resumed, confirm execution?"
-    );
-    if (isDel) {
-      alert("delete!");
-      // console.log(props.onDelLog);
-      props.onDelLog();
-    }
+    setShowConfirm(true);
+    // const isDel = window.confirm(
+    //   "This action cannot be resumed, confirm execution?"
+    // );
+    // if (isDel) {
+    //   alert("delete!");
+    //   // console.log(props.onDelLog);
+    //   props.onDelLog();
+    // }
   };
- 
+
+  const cancelHandler = () => {
+    setShowConfirm(false);
+  };
+
+  const okHandler = () => {
+    props.onDelLog();
+  };
+
   return (
     <Card className="item">
-      <Calender date={props.date} />
+      {showConfirm && (
+        <ConfirmModal
+          confirmText="This operation is not recoverable! Are you sure?"
+          onOk={okHandler}
+          onCancel={cancelHandler}
+        />
+      )}
 
+      <Calender date={props.date} />
       <div className="content">
         <h2 className="desc">{props.desc}</h2>
         <div className="time">{props.time}min</div>
