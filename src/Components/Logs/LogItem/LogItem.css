@@ -1,28 +1,29 @@
-.item{
+.item {
     background-color: antiquewhite;
     display: flex;
-    margin:16px 0;
+    margin: 16px 0;
     padding: 12px;
+    position: relative;
 }
 
-.content{
+.content {
     flex: auto;
     text-align: center;
     /* background-color: black; */
     font-weight: bold;
 }
 
-.desc{
+.desc {
     font-size: 16px;
     color: #333;
 }
 
-.time{
+.time {
     font-size: 24px;
     color: blueviolet;
 }
 
-.delete{
+.delete {
     margin-right: 6px;
     color: rgb(110, 124, 119);
     font-size: 16px;
@@ -31,7 +32,7 @@
     transition: .3s;
 }
 
-.delete:hover{
+.delete:hover {
     color: blueviolet;
     transform: rotate(1turn);
 }

@@ -1,10 +1,10 @@
 import Card from "../Card/Card";
 import "./ConfirmModal.css";
-import BackDrop from "../BackDrop/BackDrop";
+import Backdrop from "../Backdrop/Backdrop";
 
 const ConfirmModal = (props) => {
   return (
-    <BackDrop>
+    <Backdrop>
       <Card className="confirmModal">
         <div className="confirmText">
           <p>{props.confirmText}</p>
@@ -14,7 +14,7 @@ const ConfirmModal = (props) => {
           <button onClick={props.onCancel}>Cancel</button>
         </div>
       </Card>
-    </BackDrop>
+    </Backdrop>
   );
 };
 

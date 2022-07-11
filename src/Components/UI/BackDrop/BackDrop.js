@@ -1,8 +1,13 @@
 import React from "react";
-import "./BackDrop.css";
+import "./Backdrop.css";
+import ReactDOM from "react-dom";
 
-const BackDrop = (props) => {
-  return <div className="backDrop">{props.children}</div>;
+const backdropRoot = document.getElementById("backdrop-root");
+const Backdrop = (props) => {
+  return ReactDOM.createPortal(
+    <div className="backdrop">{props.children}</div>,
+    backdropRoot
+  );
 };
 
-export default BackDrop;
+export default Backdrop;

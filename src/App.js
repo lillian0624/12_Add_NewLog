@@ -2,7 +2,7 @@ import Logs from "./Components/Logs/Logs";
 import LogsForm from "./Components/LogsForm/LogsForm";
 import "./App.css";
 import { useState } from "react";
-import BackDrop from "./Components/UI/BackDrop/BackDrop";
+import Backdrop from "./Components/UI/Backdrop/Backdrop";
 
 const App = () => {
   const [logsData, setLogsData] = useState([
