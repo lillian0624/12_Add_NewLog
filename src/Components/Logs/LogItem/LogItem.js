@@ -25,6 +25,7 @@ const LogItem = (props) => {
 
   const okHandler = () => {
     props.onDelLog();
+    setShowConfirm(false);
   };
 
   return (

@@ -2,7 +2,6 @@ import Logs from "./Components/Logs/Logs";
 import LogsForm from "./Components/LogsForm/LogsForm";
 import "./App.css";
 import { useState } from "react";
-import Backdrop from "./Components/UI/Backdrop/Backdrop";
 
 const App = () => {
   const [logsData, setLogsData] = useState([
@@ -39,14 +38,21 @@ const App = () => {
     setLogsData([newLog, ...logsData]);
   };
 
-  const delLogByIndex = (index) => {
-    // setLogsData.splice(index, 1);
-    // setLogsData(prevS);
+  // const delLogByIndex = (index) => {
+  // setLogsData.splice(index, 1);
+  // setLogsData(prevS);
 
-    // setLogsData([newLog, ...logsData]);
+  // setLogsData([newLog, ...logsData]);
+  //   setLogsData((prevState) => {
+  //     const newLogs = [...prevState];
+  //     newLogs.splice(index, 1);
+  //     return newLogs;
+  //   });
+  // };
+
+  const delLogById = (id) => {
     setLogsData((prevState) => {
-      const newLogs = [...prevState];
-      newLogs.splice(index, 1);
+      const newLogs = prevState.filter((item) => item.id !== id);
       return newLogs;
     });
   };
@@ -54,7 +60,7 @@ const App = () => {
   return (
     <div className="app">
       <LogsForm onSaveLog={saveLogHandler} />
-      <Logs logsData={logsData} onDelLog={delLogByIndex} />
+      <Logs logsData={logsData} onDelLog={delLogById} />
     </div>
   );
 };
